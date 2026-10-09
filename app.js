@@ -164,3 +164,20 @@ async function loadExperiences() {
 
   return data || [];
 }
+
+const SUPABASE_URL =
+  "https://qbukmwdpyxmpdlqnpxyt.supabase.co";
+
+const SUPABASE_PUBLISHABLE_KEY =
+  "sb_publishable_JE4lOM6xO3jCP52czZTgsQ_94-7ILMu";
+
+if (window.supabase && window.supabase.createClient) {
+  window.supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_PUBLISHABLE_KEY
+  );
+
+  console.log("InternConnect: Supabase connected");
+} else {
+  console.error("Supabase library did not load.");
+}
